@@ -18,6 +18,7 @@ module Reflex.SDL2.Base
 import           Control.Monad.Exception  (MonadException)
 import           Control.Monad.IO.Class   (MonadIO)
 import           Control.Monad.Reader
+import           Control.Monad.Fix        (MonadFix)
 import           Reflex                   hiding (Additive)
 import           Reflex.Host.Class
 

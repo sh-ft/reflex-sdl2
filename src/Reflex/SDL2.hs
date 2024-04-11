@@ -55,7 +55,7 @@ module Reflex.SDL2
 import           Control.Concurrent       (newChan, newEmptyMVar, putMVar,
                                            readChan, takeMVar)
 import           Control.Concurrent.Async (async, cancel)
-import           Control.Monad            (forM_, unless, void)
+import           Control.Monad            (forM_, unless, void, guard)
 import           Control.Monad.Fix        (MonadFix)
 import           Control.Monad.Identity   (Identity (..))
 import           Control.Monad.IO.Class   (MonadIO, liftIO)
