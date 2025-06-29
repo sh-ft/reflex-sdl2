@@ -22,7 +22,7 @@ library
                      , Reflex.SDL2.Base
   build-depends:       async                  >= 2.1   && < 2.3
                      , base                   >= 4.7   && < 5
-                     , containers             >= 0.5   && < 0.7
+                     , containers             >= 0.5   && < 0.8
                      , dependent-sum          >= 0.7   && < 0.8
                      , exception-transformers >= 0.4   && < 0.5
                      , ref-tf                 >= 0.5   && < 0.6
