@@ -2,7 +2,6 @@
 {-# LANGUAGE FlexibleContexts           #-}
 {-# LANGUAGE FlexibleInstances          #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
-{-# LANGUAGE KindSignatures             #-}
 {-# LANGUAGE MultiParamTypeClasses      #-}
 {-# LANGUAGE RankNTypes                 #-}
 {-# LANGUAGE ScopedTypeVariables        #-}
@@ -15,11 +14,11 @@ module Reflex.SDL2.Base
   ) where
 
 
-import           Control.Monad.Exception  (MonadException)
-import           Control.Monad.IO.Class   (MonadIO)
-import           Control.Monad.Reader
 import           Control.Monad.Fix        (MonadFix)
-import           Reflex                   hiding (Additive)
+import           Control.Monad.Exception  (MonadException)
+import           Control.Monad.Reader
+import           Data.Kind                (Type)
+import           Reflex
 import           Reflex.Host.Class
 
 import           Reflex.SDL2.Class
@@ -28,7 +27,7 @@ import           Reflex.SDL2.Internal
 
 ------------------------------------------------------------------------------
 -- | Provides an implementation of the 'HasSDL2Events' type class.
-newtype ReflexSDL2T t (m :: * -> *) a =
+newtype ReflexSDL2T t (m :: Type -> Type) a =
   ReflexSDL2T { unReflexSDL2T :: ReaderT (SystemEvents t) m a }
 
 

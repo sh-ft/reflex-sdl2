@@ -7,7 +7,6 @@
 {-# LANGUAGE RankNTypes                 #-}
 {-# LANGUAGE RecordWildCards            #-}
 {-# LANGUAGE ScopedTypeVariables        #-}
-{-# LANGUAGE TupleSections              #-}
 {-# LANGUAGE TypeFamilies               #-}
 {-# LANGUAGE UndecidableInstances       #-}
 -- | This module contains a minimum yet convenient API needed to get started
@@ -58,7 +57,6 @@ import           Control.Concurrent.Async (async, cancel)
 import           Control.Monad            (forM_, unless, void, guard)
 import           Control.Monad.Fix        (MonadFix)
 import           Control.Monad.Identity   (Identity (..))
-import           Control.Monad.IO.Class   (MonadIO, liftIO)
 import           Control.Monad.Reader
 import           Control.Monad.Ref        (readRef)
 import           Data.Dependent.Sum       (DSum ((:=>)))
@@ -66,7 +64,7 @@ import           Data.Function            (fix)
 import           Data.Word                (Word32)
 import           GHC.Conc                 (atomically, newTVar, readTVar,
                                            readTVarIO, writeTVar)
-import           Reflex                   hiding (Additive)
+import           Reflex
 import           Reflex.Host.Class
 import           SDL                      hiding (Event, delay)
 
